@@ -87,7 +87,7 @@ std::vector<bool> P(std::vector<bool> V){
 
     std::vector<bool> result;
     for (int i = 31; i >= 0; i--){
-        int tmp = eulerPhi(i);
+        int tmp = fi(i);
         result.insert(result.begin(), v[tmp].begin(), v[tmp].end());
     }
 
@@ -167,11 +167,22 @@ std::vector<bool> f(std::vector<bool> H_in, std::vector<bool> m){
     return H_out;
 }
 
+std::vector<bool> f(const std::vector<bool>& H_in, int L){
+    std::vector<bool> l;
+    while (L){
+        l.insert(l.begin(), (L & 1) == 1);
+        L >>= 1;
+    }
+    l.insert(l.begin(), 256-l.size(), false);
+
+    return f(H_in, l);
+}
+
 void hash(const std::string& str, const std::string& inputH){
     generate_C();
 
     std::vector<bool> m = stringToBinaryVector(str);
-    std::vector<bool> H1 = hexStrToBinaryVector(inputH);
+    std::vector<bool> H1 = hexStrToBinaryVector(inputH, false);
 
     std::vector<bool> h = H1; // значение хэш-функции
     std::vector<bool> K(256, false); // контрольная сумма

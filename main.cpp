@@ -1,6 +1,6 @@
 #include <iostream>
-#include "test.h"
+#include "hash.h"
 
 int main() {
-    test();
+    hash("123123123hghhg");
 }

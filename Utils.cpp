@@ -27,10 +27,12 @@ bool isHexDigit(char c) {
     return (std::isdigit(c) || (std::tolower(c) >= 'a' && std::tolower(c) <= 'f'));
 }
 
-std::vector<bool> hexStrToBinaryVector(const std::string& inputH){
-    if (inputH.length() != 64){
-        std::cerr << "H1 length != 64!";
-        exit(-1);
+std::vector<bool> hexStrToBinaryVector(const std::string& inputH, bool isTest){
+    if (!isTest){
+        if (inputH.length() != 64){
+            std::cerr << "H1 length != 64!";
+            exit(-1);
+        }
     }
 
     for (char c : inputH) {
@@ -134,24 +136,11 @@ void generate_C(){
     C.emplace_back(256, false);
 }
 
-int eulerPhi(int n) {
-    int result = n; // Изначально присваиваем результату значение n
-
-    // Перебираем все простые числа, меньшие или равные n
-    for (int p = 2; p * p <= n; ++p) {
-        // Если p является делителем n
-        if (n % p == 0) {
-            // Вычитаем из результата все кратные p
-            while (n % p == 0) n /= p;
-            result -= result / p;
-        }
-    }
-
-    // Если после деления n на все простые числа, меньшие или равные его, n осталось больше 1,
-    // значит, это простое число, и мы вычитаем из результата ещё один делитель
-    if (n > 1) result -= result / n;
-
-    return result;
+int fi(int n) {
+    int i = n & 0x03;
+    int k = n >> 2;
+    k++;
+    return (i << 3) + k - 1;
 }
 
 std::vector<bool> addZerosToBegin(std::vector<bool> v){

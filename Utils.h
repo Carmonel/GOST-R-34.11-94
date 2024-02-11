@@ -22,12 +22,12 @@ const int BLOCK_SIZE = 256;
 std::vector<bool> stringToBinaryVector(const std::string& str);
 int hexCharToDecimal(char c);
 bool isHexDigit(char c);
-std::vector<bool> hexStrToBinaryVector(const std::string& inputH);
+std::vector<bool> hexStrToBinaryVector(const std::string& inputH, bool isTest);
 std::vector<bool> xor_func(std::vector<bool> a, std::vector<bool> b);
 std::vector<bool> vectorSum(std::vector<bool> a, std::vector<bool> b);
 std::vector<std::vector<bool>> splitVector(std::vector<bool> V, int splitsCount);
 void generate_C();
-int eulerPhi(int n);
+int fi(int n);
 std::vector<bool> addZerosToBegin(std::vector<bool> v);
 
 #endif //GOST_R_34_11_94_UTILS_H

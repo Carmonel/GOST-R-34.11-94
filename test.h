@@ -5,6 +5,15 @@
 #include "hash.h"
 #include "Utils.h"
 
+std::ostream& operator<<(std::ostream& os, const std::vector<bool>& v){
+    os << "[";
+    for (int i = 0; i < v.size(); i++){
+        if (i != v.size() - 1) os << v[i] << ", ";
+        else os << v[i] << "]";
+    }
+    return os;
+}
+
 void test(){
     ///
     /// std::vector<bool> stringToBinaryVector(const std::string& str)
@@ -70,7 +79,25 @@ void test(){
                                    std::vector<bool>({true, false, true, true}));
     std::vector<bool> d({true, false, false, true});
     std::cout << (c == d? "Test passed." : "Test ruined.");
-    std::cout << std::endl;
+    std::cout << std::endl << std::endl;
+
+    ///
+    /// std::vector<bool> vectorSum(std::vector<bool> a, std::vector<bool> b)
+    ///
+    // 1 0 0 0 1 0
+    // 0 1 0 0 1 1
+    // 1 1 0 1 0 1
+    std::cout << "std::vector<bool> vectorSum(std::vector<bool> a, std::vector<bool> b):" << std::endl;
+    std::vector<bool> x({true, false, false, false, true, false});
+    std::vector<bool> y({false, true, false, false, true, true});
+    std::vector<bool> sum({true, true, false, true, false, true});
+    std::vector<bool> sumTmp = vectorSum(x, y);
+    if (sum != sumTmp){
+        std::cout << sum << " != " << sumTmp << std::endl;
+        std::cout << "Test ruined.";
+    }
+    else std::cout << "Test passed.";
+    std::cout << std::endl << std::endl;
 }
 
 

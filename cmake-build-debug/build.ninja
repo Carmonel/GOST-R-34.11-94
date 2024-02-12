@@ -55,14 +55,14 @@ build CMakeFiles/GOST_R_34_11_94.dir/main.cpp.obj: CXX_COMPILER__GOST_R_34_11_94
   OBJECT_DIR = CMakeFiles\GOST_R_34_11_94.dir
   OBJECT_FILE_DIR = CMakeFiles\GOST_R_34_11_94.dir
 
-build CMakeFiles/GOST_R_34_11_94.dir/hash.cpp.obj: CXX_COMPILER__GOST_R_34_11_94_unscanned_Debug C$:/Users/user/CLionProjects/GOST_R_34.11-94/hash.cpp || cmake_object_order_depends_target_GOST_R_34_11_94
-  DEP_FILE = CMakeFiles\GOST_R_34_11_94.dir\hash.cpp.obj.d
+build CMakeFiles/GOST_R_34_11_94.dir/Utils.cpp.obj: CXX_COMPILER__GOST_R_34_11_94_unscanned_Debug C$:/Users/user/CLionProjects/GOST_R_34.11-94/Utils.cpp || cmake_object_order_depends_target_GOST_R_34_11_94
+  DEP_FILE = CMakeFiles\GOST_R_34_11_94.dir\Utils.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\GOST_R_34_11_94.dir
   OBJECT_FILE_DIR = CMakeFiles\GOST_R_34_11_94.dir
 
-build CMakeFiles/GOST_R_34_11_94.dir/Utils.cpp.obj: CXX_COMPILER__GOST_R_34_11_94_unscanned_Debug C$:/Users/user/CLionProjects/GOST_R_34.11-94/Utils.cpp || cmake_object_order_depends_target_GOST_R_34_11_94
-  DEP_FILE = CMakeFiles\GOST_R_34_11_94.dir\Utils.cpp.obj.d
+build CMakeFiles/GOST_R_34_11_94.dir/hash.cpp.obj: CXX_COMPILER__GOST_R_34_11_94_unscanned_Debug C$:/Users/user/CLionProjects/GOST_R_34.11-94/hash.cpp || cmake_object_order_depends_target_GOST_R_34_11_94
+  DEP_FILE = CMakeFiles\GOST_R_34_11_94.dir\hash.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\GOST_R_34_11_94.dir
   OBJECT_FILE_DIR = CMakeFiles\GOST_R_34_11_94.dir
@@ -75,7 +75,7 @@ build CMakeFiles/GOST_R_34_11_94.dir/Utils.cpp.obj: CXX_COMPILER__GOST_R_34_11_9
 #############################################
 # Link the executable GOST_R_34_11_94.exe
 
-build GOST_R_34_11_94.exe: CXX_EXECUTABLE_LINKER__GOST_R_34_11_94_Debug CMakeFiles/GOST_R_34_11_94.dir/main.cpp.obj CMakeFiles/GOST_R_34_11_94.dir/hash.cpp.obj CMakeFiles/GOST_R_34_11_94.dir/Utils.cpp.obj
+build GOST_R_34_11_94.exe: CXX_EXECUTABLE_LINKER__GOST_R_34_11_94_Debug CMakeFiles/GOST_R_34_11_94.dir/main.cpp.obj CMakeFiles/GOST_R_34_11_94.dir/Utils.cpp.obj CMakeFiles/GOST_R_34_11_94.dir/hash.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\GOST_R_34_11_94.dir

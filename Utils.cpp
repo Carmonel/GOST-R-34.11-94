@@ -71,30 +71,29 @@ std::vector<bool> xor_func(std::vector<bool> a, std::vector<bool> b){
 }
 
 std::vector<bool> vectorSum(std::vector<bool> a, std::vector<bool> b){
-    if (a.size() != b.size()){
-        std::cerr << "vectorSum: sizes not equals!";
-        exit(-1);
-    }
+    std::vector<bool> result;
+    bool carry = false;
 
-    std::vector<bool> result(a.size());
-    result.reserve(a.size());
-    for (int i = a.size(); i >= 0; i--){
-        if (a[i] & !b[i]){
-            result[i] = true;
-            continue;
-        }
-        if (!a[i] & b[i]){
-            result[i] = true;
-            continue;
-        }
-        if (!a[i] & !b[i]){
-            result[i] = false;
-            continue;
-        }
-        if (a[i] & b[i]){
-            result[i] = false;
-            if (i != 0) result[i - 1] = true;
-        }
+    int i = a.size() - 1;
+    int j = b.size() - 1;
+    int k = 0;
+    while (i >= 0 || j >= 0 || carry) {
+        // Получаем текущие биты из векторов, если они еще не закончились
+        bool bitA = (i >= 0) && a[i];
+        bool bitB = j >= 0 && b[j];
+
+        // Вычисляем сумму текущих битов и остатка
+        bool sum = bitA ^ bitB ^ carry;
+
+        // Обновляем остаток для следующей итерации
+        carry = (bitA & bitB) | (bitA & carry) | (bitB & carry);
+
+        // Добавляем текущий бит к результату
+        result.insert(result.begin(), sum);
+
+        // Переходим к предыдущим битам
+        i--;
+        j--;
     }
 
     return result;
